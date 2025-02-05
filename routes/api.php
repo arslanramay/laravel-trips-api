@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\WeatherPreferenceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,6 @@ Route::get('/', function () {
     Route::post('/trips', [TripController::class, 'store']);
     Route::get('/trips', [TripController::class, 'index']);
 //});
+
+// Weather APIs Routes [OpenWeather & AccuWeather]
+Route::get('/weather', [WeatherController::class, 'getWeather']);

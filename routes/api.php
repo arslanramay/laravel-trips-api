@@ -16,20 +16,25 @@ Route::get('/', function () {
     return 'Hello Trips API';
 });
 
+// =============================================
 // Public Routes
+// =============================================
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 // =============================================
-// Authenticated Routes - Laravel Sanctum
+// Protected Routes - Laravel Sanctum
 // =============================================
 Route::middleware('auth:sanctum')->group(function () {
+    // Weather Preferences
     Route::post('/preferences', [WeatherPreferenceController::class, 'store']);
     Route::get('/preferences', [WeatherPreferenceController::class, 'show']);
 
+    // Cities
     //    Route::get('/cities', [CityController::class, 'index']);
     Route::get('/cities', [CityController::class, 'getCitiesByWeather']);
 
+    // Trips
     Route::post('/trips', [TripController::class, 'store']);
     Route::get('/trips', [TripController::class, 'index']);
 });
@@ -40,4 +45,4 @@ Route::middleware('auth:sanctum')->group(function () {
 // Weather APIs Routes [OpenWeather & AccuWeather]
 Route::get('/weather', [WeatherController::class, 'getWeather']);
 
-//Route::get('/cities', [CityController::class, 'getCitiesByWeather']);
+// Route::get('/cities', [CityController::class, 'getCitiesByWeather']);

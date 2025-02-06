@@ -10,6 +10,8 @@ class AuthController extends Controller
 {
     /**
      * User Registration
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request)
     {
@@ -36,6 +38,8 @@ class AuthController extends Controller
 
     /**
      * User Login
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function login(Request $request)
     {

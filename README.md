@@ -130,6 +130,3 @@ php artisan db:seed --class=TripSeeder
 [//]: # (2. **Set Up Supervisor for Queue Processing &#40;Optional&#41;**)
 [//]: # (3. **Deploy on AWS, DigitalOcean, or a Laravel-ready hosting provider.**)
 
-## Conclusion`
-This API enables efficient trip plannin`g by filtering cities based on weather preferences and allowing users to store trips. It uses Laravel Sanctum for secure authentication and database seeders for easy testing.
-

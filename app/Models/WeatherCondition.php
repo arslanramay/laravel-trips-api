@@ -16,7 +16,8 @@ class WeatherCondition extends Model
      */
     protected $fillable = ['city_id', 'month', 'avg_temp'];
 
-    public function city() {
+    public function city()
+    {
         return $this->belongsTo(City::class);
     }
 }

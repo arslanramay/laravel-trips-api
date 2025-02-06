@@ -9,7 +9,6 @@ class WeatherPreference extends Model
 {
     use HasFactory;
 
-
     /**
      * The attributes that are mass assignable.
      *
@@ -17,11 +16,11 @@ class WeatherPreference extends Model
      */
     protected $fillable = ['user_id', 'temp_min', 'temp_max'];
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }

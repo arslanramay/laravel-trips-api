@@ -47,10 +47,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function preferences() {
+    public function preferences()
+    {
         return $this->hasOne(WeatherPreference::class);
     }
-    public function trips() {
+
+    public function trips()
+    {
         return $this->hasMany(Trip::class);
     }
 }

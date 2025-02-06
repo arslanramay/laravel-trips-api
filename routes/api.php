@@ -7,24 +7,25 @@ use App\Http\Controllers\WeatherPreferenceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/user', function (Request $request) {
+// Route::get('/user', function (Request $request) {
 //    return $request->user();
-//})->middleware('auth:sanctum');
+// })->middleware('auth:sanctum');
 
 Route::get('/', function () {
-    return "Hello Trips API";
+    return 'Hello Trips API';
 });
 
+// Route::middleware('auth:sanctum')->group(function () {
+Route::post('/preferences', [WeatherPreferenceController::class, 'store']);
+Route::get('/preferences', [WeatherPreferenceController::class, 'show']);
 
-//Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/preferences', [WeatherPreferenceController::class, 'store']);
-    Route::get('/preferences', [WeatherPreferenceController::class, 'show']);
+//    Route::get('/cities', [CityController::class, 'index']);
 
-    Route::get('/cities', [CityController::class, 'index']);
-
-    Route::post('/trips', [TripController::class, 'store']);
-    Route::get('/trips', [TripController::class, 'index']);
-//});
+Route::post('/trips', [TripController::class, 'store']);
+Route::get('/trips', [TripController::class, 'index']);
+// });
 
 // Weather APIs Routes [OpenWeather & AccuWeather]
 Route::get('/weather', [WeatherController::class, 'getWeather']);
+
+Route::get('/cities', [CityController::class, 'getCitiesByWeather']);

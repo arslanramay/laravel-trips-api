@@ -14,7 +14,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 // API Routes
-//Route::middleware('auth:sanctum')->group(function () {
+// Route::middleware('auth:sanctum')->group(function () {
 //    Route::post('/preferences', [WeatherPreferenceController::class, 'store']);
 //    Route::get('/preferences', [WeatherPreferenceController::class, 'show']);
 //
@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->group(function () {
 //
 //    Route::post('/trips', [TripController::class, 'store']);
 //    Route::get('/trips', [TripController::class, 'index']);
-//});
+// });

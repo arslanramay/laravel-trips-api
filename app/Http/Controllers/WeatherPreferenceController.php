@@ -8,12 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class WeatherPreferenceController extends Controller
 {
-    public function index()
+    public function index() {}
+
+    public function store(Request $request)
     {
-
-    }
-
-    public function store(Request $request) {
         $request->validate([
             'temp_min' => 'required|integer',
             'temp_max' => 'required|integer',
@@ -27,7 +25,8 @@ class WeatherPreferenceController extends Controller
         return response()->json($preference);
     }
 
-    public function show() {
+    public function show()
+    {
         return response()->json(Auth::user()->weatherPreference);
     }
 }

@@ -16,11 +16,13 @@ class Trip extends Model
      */
     protected $fillable = ['user_id', 'city_id', 'start_date', 'end_date'];
 
-    public function city() {
+    public function city()
+    {
         return $this->belongsTo(City::class);
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }

@@ -11,13 +11,9 @@ class WeatherConditionSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    //    public function run(): void
-    //    {
-    //        //
-    //    }
-
-    public function run()
+    public function run(): void
     {
+        //        Generate 5 records only
         //        $weatherData = [
         //            ['city_id' => 1, 'month' => 'June', 'avg_temp' => 25, 'humidity' => 60, 'precipitation' => 10], // New York
         //            ['city_id' => 2, 'month' => 'June', 'avg_temp' => 18, 'humidity' => 65, 'precipitation' => 15], // Paris
@@ -33,7 +29,7 @@ class WeatherConditionSeeder extends Seeder
         // Generate 100 records dynamically
         for ($i = 6; $i <= 100; $i++) {
             $weatherData[] = [
-                'city_id' => rand(1, 5), // Assuming 20 cities exist
+                'city_id' => rand(1, 25),
                 'month' => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][array_rand(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])],
                 'avg_temp' => rand(10, 45),
                 'humidity' => rand(40, 80),

@@ -20,6 +20,8 @@ class WeatherController extends Controller
 
     /**
      * Fetch weather data based on city name.
+     *
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getWeather(Request $request)
     {

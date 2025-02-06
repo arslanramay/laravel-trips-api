@@ -13,21 +13,21 @@ class TripSeeder extends Seeder
     public function run(): void
     {
         Trip::create([
-            'user_id' => 1, // John Doe
+            'user_id' => 1, // Tom
             'city_id' => 1, // New York
             'start_date' => '2025-06-10',
             'end_date' => '2025-06-20',
         ]);
 
         Trip::create([
-            'user_id' => 2, // Anna Smith
+            'user_id' => 2, // Anna
             'city_id' => 2, // Paris
             'start_date' => '2025-07-05',
             'end_date' => '2025-07-15',
         ]);
 
         Trip::create([
-            'user_id' => 3, // Tom Johnson
+            'user_id' => 3, // Paul
             'city_id' => 3, // Tokyo
             'start_date' => '2025-08-01',
             'end_date' => '2025-08-10',

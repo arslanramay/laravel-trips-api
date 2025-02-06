@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 
 class CitySeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
         $cities = [
             ['name' => 'New York', 'country' => 'USA', 'latitude' => 40.7128, 'longitude' => -74.0060],

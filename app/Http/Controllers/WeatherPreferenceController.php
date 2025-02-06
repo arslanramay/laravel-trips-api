@@ -8,11 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class WeatherPreferenceController extends Controller
 {
-
     /**
      * Store Weather Preferences in the Database
      *
-     * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
@@ -29,7 +27,6 @@ class WeatherPreferenceController extends Controller
 
         return response()->json($preference);
     }
-
 
     /**
      * Get Weather Preferences of an Authenticated User

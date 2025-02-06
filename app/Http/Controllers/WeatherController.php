@@ -20,6 +20,7 @@ class WeatherController extends Controller
 
     /**
      * Fetch weather data based on city name.
+     * TODO: Fix OpenWeather API issue first
      *
      * @return \Illuminate\Http\JsonResponse
      */
@@ -28,11 +29,9 @@ class WeatherController extends Controller
         $request->validate([
             'city' => 'required|string',
         ]);
-        //        dd($request->all());
 
         $city = $request->city;
         $region = $this->detectRegion($city);
-        //        dd($region);
 
         if ($region === 'Africa' || $region === 'Southeast Asia') {
             $weather = $this->accuWeatherService->getWeatherByCity($city);

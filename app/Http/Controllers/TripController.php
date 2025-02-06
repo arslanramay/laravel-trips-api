@@ -11,22 +11,10 @@ class TripController extends Controller
     /**
      * Store Trip(s) in the database
      *
-     * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
-//        dd($request->all());
-//        $request->validate([
-//            'city_id' => 'required|exists:cities,id',
-//            'start_date' => 'required|date',
-//            'end_date' => 'required|date|after:start_date',
-//        ]);
-//
-//        $trip = Trip::create(array_merge($request->all(), ['user_id' => Auth::id()]));
-//
-//        return response()->json($trip);
-
         $request->validate([
             'cities' => 'required|array',
             'cities.*.city_id' => 'required|exists:cities,id',
@@ -39,20 +27,20 @@ class TripController extends Controller
                 'user_id' => Auth::id(),
                 'city_id' => $trip['city_id'],
                 'start_date' => $trip['start_date'],
-                'end_date' => $trip['end_date']
+                'end_date' => $trip['end_date'],
             ]);
         }
 
         return response()->json(['message' => 'Trips stored successfully']);
     }
 
-
     /**
      * List all the Trips for an Authenticated User
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index() {
+    public function index()
+    {
         $trips = Trip::where('user_id', Auth::id())
             ->with('city')
             ->get()
@@ -62,7 +50,7 @@ class TripController extends Controller
                     'city' => $trip->city->name,
                     'country' => $trip->city->country,
                     'start_date' => $trip->start_date,
-                    'end_date' => $trip->end_date
+                    'end_date' => $trip->end_date,
                 ];
             });
 

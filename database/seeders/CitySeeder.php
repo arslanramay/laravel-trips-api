@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\City;
+use Illuminate\Database\Seeder;
 
-class CitySeeder extends Seeder {
-    public function run() {
+class CitySeeder extends Seeder
+{
+    public function run()
+    {
         $cities = [
             ['name' => 'New York', 'country' => 'USA', 'latitude' => 40.7128, 'longitude' => -74.0060],
             ['name' => 'Paris', 'country' => 'France', 'latitude' => 48.8566, 'longitude' => 2.3522],

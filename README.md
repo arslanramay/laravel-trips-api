@@ -13,8 +13,8 @@ This is a Laravel-based API application that allows users to search for cities b
 ## Installation Steps
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/your-repo/laravel-trip-planning.git
-   cd laravel-trip-planning
+   git clone https://github.com/arslanramay/laravel-trips-api.git
+   cd laravel-trips-api
    ```
 
 2. **Install Dependencies**
@@ -90,9 +90,10 @@ php artisan db:seed
 To seed a specific table, use:
 
 ```sh
-php artisan db:seed --class=CitySeeder
-php artisan db:seed --class=WeatherConditionSeeder
 php artisan db:seed --class=UserSeeder
+php artisan db:seed --class=CitySeeder
+php artisan db:seed --class=WeatherPreferenceSeeder
+php artisan db:seed --class=WeatherConditionSeeder
 php artisan db:seed --class=TripSeeder
 ```
 
@@ -125,9 +126,10 @@ php artisan db:seed --class=TripSeeder
    php artisan route:cache
    php artisan view:cache
    ```
-2. **Set Up Supervisor for Queue Processing (Optional)**
-3. **Deploy on AWS, DigitalOcean, or a Laravel-ready hosting provider.**
 
-## Conclusion
-This API enables efficient trip planning by filtering cities based on weather preferences and allowing users to store trips. It uses Laravel Sanctum for secure authentication and database seeders for easy testing.
+[//]: # (2. **Set Up Supervisor for Queue Processing &#40;Optional&#41;**)
+[//]: # (3. **Deploy on AWS, DigitalOcean, or a Laravel-ready hosting provider.**)
+
+## Conclusion`
+This API enables efficient trip plannin`g by filtering cities based on weather preferences and allowing users to store trips. It uses Laravel Sanctum for secure authentication and database seeders for easy testing.
 

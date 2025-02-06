@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            WeatherPreferenceSeeder::class,
             CitySeeder::class,
+            WeatherPreferenceSeeder::class,
             WeatherConditionSeeder::class,
             TripSeeder::class,
         ]);
